@@ -1,33 +1,161 @@
-// Create a clone of the menu, right next to original.
-	$('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
+var controller = new ScrollMagic.Controller();
+		
+//Number 1
+new ScrollMagic.Scene({
+	triggerElement: '#Introduction',
+	})
+	.setClassToggle('#welcomeLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
-	scrollIntervalID = setInterval(stickIt, 10);
+//Number 2		
+new ScrollMagic.Scene({
+	triggerElement: '#Lifeline',
+	})
+	.triggerHook(0)
+	.setClassToggle('#welcomeLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+			
+new ScrollMagic.Scene({
+	triggerElement: '#Lifeline',
+	})
+	.triggerHook(0)
+	.setClassToggle('#lifelineLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+	
+
+// Number 3		
+new ScrollMagic.Scene({
+	triggerElement: '#OneRiver',
+	})
+	.triggerHook(0)
+	.setClassToggle('#oneRiverLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+	
+
+new ScrollMagic.Scene({
+	triggerElement: '#OneRiver',
+	})
+	.triggerHook(0)
+	.setClassToggle('#lifelineLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+
+//Number 4	
+new ScrollMagic.Scene({
+	triggerElement: '#ControlStructures',
+	})
+	.triggerHook(0)
+	.setClassToggle('#controlLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
 	
-	function stickIt() {
+new ScrollMagic.Scene({
+	triggerElement: '#ControlStructures',
+	})
+	.triggerHook(0)
+	.setClassToggle('#oneRiverLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+
+//Number 5	
+new ScrollMagic.Scene({
+	triggerElement: '#WaterSupply',
+	})
+	.triggerHook(0)
+	.setClassToggle('#controlLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
-	  var orgElementPos = $('.original').offset();
-	  orgElementTop = orgElementPos.top;               
+new ScrollMagic.Scene({
+	triggerElement: '#WaterSupply',
+	})
+	.triggerHook(0)
+	.setClassToggle('#waterSupplyLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
-	  if ($(window).scrollTop() >= (orgElementTop)) {
-		// scrolled past the original position; now only show the cloned, sticky element.
+//Number 6	
+new ScrollMagic.Scene({
+	triggerElement: '#ExtendedDrought',
+	})
+	.triggerHook(0)
+	.setClassToggle('#waterSupplyLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
-		// Cloned element should always have same left position and width as original element.     
-		orgElement = $('.original');
-		coordsOrgElement = orgElement.offset();
-		leftOrgElement = coordsOrgElement.left;  
-		widthOrgElement = orgElement.css('width');
-		$('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
-		$('.original').css('visibility','hidden');
-	  } else {
-		// not scrolled past the menu; only show the original menu.
-		$('.cloned').hide();
-		$('.original').css('visibility','visible');
-	  }
-	}
+new ScrollMagic.Scene({
+	triggerElement: '#ExtendedDrought',
+	})
+	.triggerHook(0)
+	.setClassToggle('#extendedDroughtLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
+//Number 7	
+new ScrollMagic.Scene({
+	triggerElement: '#StorageCapacity',
+	})
+	.triggerHook(0)
+	.setClassToggle('#extendedDroughtLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
+new ScrollMagic.Scene({
+	triggerElement: '#StorageCapacity',
+	})
+	.triggerHook(0)
+	.setClassToggle('#storageCapacityLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
+//Number 8
+new ScrollMagic.Scene({
+	triggerElement: '#SupplyDemand',
+	})
+	.triggerHook(0)
+	.setClassToggle('#storageCapacityLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
+new ScrollMagic.Scene({
+	triggerElement: '#SupplyDemand',
+	})
+	.triggerHook(0)
+	.setClassToggle('#supplyDemandLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
+//Number 9
+new ScrollMagic.Scene({
+	triggerElement: '#DecliningStorage',
+	})
+	.triggerHook(0)
+	.setClassToggle('#supplyDemandLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
 	
+new ScrollMagic.Scene({
+	triggerElement: '#DecliningStorage',
+	})
+	.triggerHook(0)
+	.setClassToggle('#decliningStorageLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+	
+//Number 10
+new ScrollMagic.Scene({
+	triggerElement: '#Shortage',
+	})
+	.triggerHook(.05)
+	.setClassToggle('#decliningStorageLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+	
+new ScrollMagic.Scene({
+	triggerElement: '#Shortage',
+	})
+	.triggerHook(.05)
+	.setClassToggle('#shortageLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+	
+//Number 11
+new ScrollMagic.Scene({
+	triggerElement: '#EraOfHope',
+	})
+	.triggerHook(.05)
+	.setClassToggle('#shortageLink', 'notCurrent')
+	.addTo(controller); // Add Scene to ScrollMagic Controller
+	
+new ScrollMagic.Scene({
+	triggerElement: '#EraOfHope',
+	})
+	.triggerHook(.05)
+	.setClassToggle('#eraLink', 'current')
+	.addTo(controller); // Add Scene to ScrollMagic Controller

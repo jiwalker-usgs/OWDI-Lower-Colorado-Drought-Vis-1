@@ -11,6 +11,9 @@
 	color:#fff !important;
 	}
 	
+.chill{
+	margin-bottom:0 !important;
+	}
 /*=====Leaving App CSS=====*/
 .leaving{
 	margin-right:3px;
@@ -65,18 +68,21 @@
 
 /*Sticky Nav CSS*/
 
-.menu{
+.navMenu{
 	background:#003366;
 	height:60px;
 	padding:0px !important;
 	margin-bottom:0px !important;
 	}
 	
+.navMenu a{
+	font-weight:300 !important;
+	}
+	
 #stickynavContainer{
-	position:fixed;
 	width:100%;
 	height:60px;
-	z-index:1000;
+	z-index:10;
 	}
 
 #stickynav{
@@ -105,7 +111,7 @@
 	font-weight:300;
 	}
 
-.toolTip{
+.navToolTip{
 	display:none;
 	}
 
@@ -126,6 +132,7 @@
 
 .socialMedia{
 	height:40px;
+	width:140px;
 	position:absolute;
 	right:10px;
 	top:30px;
@@ -145,6 +152,7 @@
 	width:25px;
 	cursor:pointer;
 	margin-left:20px;
+	float:left;
 	}
 
 #welcomeSocial{
@@ -160,8 +168,9 @@
 	position:absolute;
 	right:0;
 	top:25px;
-	z-index:10000;
+	z-index:9;
 	display:none;
+	font-size:.9em !important;
 	}
 
 .takeLink{
@@ -209,6 +218,10 @@
 	text-align: center;
 	clear:both;
 }
+
+.container a{
+	font-weight:700;
+	}
 
 #TreeRingDataLegend{
   height: 50px;
@@ -393,11 +406,12 @@
 	background: none;
 	color: #003366;
 	font-weight: bold;
-	padding: 10px;
+	padding: 5px 10px !important;
 	border: 1px solid #003366;
 	border-radius: 5px;
 	margin: 20px 0 50px 0;
 	outline: none;
+	font-size:.8em !important;
 }
 
 .supportinginfo:focus{
@@ -594,8 +608,8 @@
 #mead-object,
 #mead-elev-object,
 #animated-object,
-#utah,
 #droughtMovingAvg-object,
+#utah,
 #bluedragon-object,
 #co-basin-object{
 	width:100%;
@@ -685,7 +699,7 @@
 	}
 
 	#scrollDownArrow{
-		bottom:200px;
+		bottom:250px;
 	}
 
 	#welcomeSocial{
@@ -693,7 +707,7 @@
 	}
 	
 	.socialMedia{
-		right:35px;
+		right:10px;
 		}
 	
 	.onWhite{
@@ -842,13 +856,16 @@
 		#WaterSupply{
 			background-attachment: scroll !important;
 		}
+		
+		#scrollDownArrow{
+			bottom:200px;
+			}
 
 		}
 
 @media screen and (min-width: 768px){
 	#animated-object{
 		display:block;
-		margin-top:100px;
 	}
 
 	#animated-object-mobile{
@@ -875,9 +892,6 @@
 		margin-top:100px;
 		}
 
-	#droughtMovingAvg-object{
-		margin-top:100px;
-		}
 		
 	#creditLogosTop img,
 	#creditLogosBottom img{
@@ -913,20 +927,20 @@
 		text-decoration:none;
 		}
 
-	.navBox:hover .toolTip{
+	.navBox:hover .navToolTip{
 	display:block !important;
 	}
 
-	.toolTip{
+	.navToolTip{
 		background:rgb(220,220,220);
 		padding:10px;
 		width:160px;
 		position:absolute;
-		bottom:-45px;
+		bottom:-55px;
 		display:none;
 	}
 
-	.toolTip:after{
+	.navToolTip:after{
 		content:"";
 		width: 0;
 		height: 0;
@@ -952,9 +966,14 @@
 		right:-7px;
 		transform: rotate(90deg);
 	}
+	
+	.socialMedia{
+		width:25px;
+		}
 
 	.socialMedia img{
 		display:block;
+		float:none;
 		margin-bottom:20px;
 		}
 

@@ -251,20 +251,22 @@ add_scene_buttons <- function(svg, form.factor='desktop'){
     newXMLNode('rect',parent=g_dc, attrs = c(x='555',width="50",height="547",fill="white",opacity="0.3"))
     newXMLNode('path',parent=g_dc, attrs = c(d="M570 299 L590 273.5 L570 248",style="stroke:grey;stroke-width:12;fill:none",'stroke-linecap'="round",onclick="incrementScene()"))
     newXMLNode('path',parent=g_dc, attrs = c(id="mouser-helper", d="m201.453995,112.872002l-183.068584,-100.156902l78.608601,195.193897l31.298012,-50.675995l61.883972,67.641998l23.437012,-22.837006l-63.26799,-66.993988l51.108978,-22.172005z", 
-                                             fill="#ffffff", stroke="#000000", 'stroke-width'="8", 'stroke-linejoin'="round", opacity="0.6", transform="translate(555,280),scale(0.15,0.15)", class="hidden"))
+                                             fill="#ffffff", stroke="#000000", 'stroke-width'="8", 'stroke-linejoin'="round", opacity="0.6", transform="translate(570,290),scale(0.15,0.15)", class="hidden"))
     newXMLNode('rect',parent=g_dc, attrs = c(x='555',width="50",height="547",fill="white",opacity="0.0",onclick="incrementScene()"))
   }
   invisible(svg)
   
 }
 
-add_picto_legend <- function(svg){
+add_picto_legend <- function(svg, language){
   root_nd <- xmlRoot(svg)
   g_nd = newXMLNode('g',parent=root_nd,attrs = c(id='mead-pictogram-legend',transform='translate(200,135)',class="legend-hidden"))
   newXMLNode('rect',parent=g_nd,attrs=c(x="150", y="270", width="130", height="45", stroke="#FFFFFF", fill="none"))
-  newXMLNode('text', parent=g_nd, newXMLTextNode("Legend"), attrs=c(class='legend-text', x="215", y="278", fill="#FFFFFF", dy="0.7em", stroke="none", style="text-anchor: middle;"))
+  newXMLNode('text', parent=g_nd, newXMLTextNode(lt('mead-pictogram-legend',language)), attrs=c(class='legend-text', x="215", y="278", fill="#FFFFFF", dy="0.7em", stroke="none", style="text-anchor: middle;"))
   newXMLNode('rect',parent=g_nd,attrs=c(x="156", y="300", width="10", height="10", rx="2", ry="2", fill="#1975d1", stroke="#1975d1", 'stroke-width'="1.5"))
-  newXMLNode('text', parent=g_nd, newXMLTextNode("100,000 acre-feet"), attrs=c(class='small-text', x="175", y="300", fill="#FFFFFF", dy="0.7em", stroke="none", style="text-anchor: left;"))
+  key.units <- c('en'=paste0("100,000 ",lt('mead-pictogram-legend-units-imperial',language)),
+                 'es'=paste0("100 ",lt('mead-pictogram-legend-units-metric',language)))
+  newXMLNode('text', parent=g_nd, newXMLTextNode(key.units[[language]]), attrs=c(class='small-text', x="175", y="300", fill="#FFFFFF", dy="0.7em", stroke="none", style="text-anchor: left;"))
   invisible(svg)
 }
 

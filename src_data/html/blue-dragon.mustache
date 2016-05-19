@@ -17,12 +17,12 @@
        
 	<div id="blueDragon">
 		
-		<object id="bluedragon-object" data="../img/bluedragon-animate.svg" type="image/svg+xml" ></object>
+		<object id="bluedragon-object" data="../img/bluedragon-animate.svg?version={{ version }}" type="image/svg+xml" ></object>
 	</div>
 
 
 <div class="graphCaption">
-<p>{{{ tr.blueDragon5 }}}</p>
+<p class="chill">{{{ tr.blueDragon5 }}}</p>
 
 </div>
 
@@ -35,7 +35,7 @@
 	
 		<div class="exploreMore" id="blueDragonExplore">
 			<a href="http://txpub.usgs.gov/DSS/StoryMaps/BlueDragon/" target="_blank">
-				<img src="../img/texas-app.jpg" alt="texas water science center app"/>
+				<img src="../img/texas-app.jpg?version={{ version }}" alt="texas water science center app"/>
 			</a>
 			<p>{{{ tr.blueDragon8 }}}</p>
 			<a href="http://txpub.usgs.gov/DSS/StoryMaps/BlueDragon/" target="_blank"><button class="extraButton">{{{ tr.explore }}}</button></a>
@@ -44,11 +44,11 @@
 	</div>
 	
 	<div class="socialMedia onWhite">
-		<img src="../img/social-media/twitter-blue-01.svg" alt="twitter icon"/>
-		<img src="../img/social-media/github-blue-01.svg" alt="github icon"/>
+		{{> twitter}}
+		{{> github}}
 		<img id="blueDragonLinkOut" src="../img/social-media/link-blue-01.svg" alt="link icon"/>
 		<div id="blueDragonLink" class="takeLinkBlue" >
-			<input id="blueDragonURL" type="text" value="http://go.usa.gov/#blue-dragon">
+			<input id="blueDragonURL" title="Link to Blue Dragon Section" type="text" value="http://doi.gov/water/owdi.cr.drought/en/index.html#blue-dragon">
 		</div>
 	</div>
 

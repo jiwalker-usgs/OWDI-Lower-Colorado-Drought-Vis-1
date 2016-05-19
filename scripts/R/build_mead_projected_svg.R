@@ -1,13 +1,14 @@
 # build svg line animation
 
-if(!require(dinosvg)){
-  devtools::install_github('jread-usgs/dinosvg')
+if(!require(dinosvg) || packageVersion('dinosvg') != '0.1.9'){
+  devtools::install_github('jread-usgs/dinosvg@v0.1.9')
   library(dinosvg)
 }
 
 
 library(XML)
 library(dplyr)
+library(xml2)
 source('scripts/R/build_ecmascript.R')
 source('scripts/R/manipulate_lowCO_borders_svg.R')
 source('scripts/R/manipulate_mead_projected.R')
@@ -34,4 +35,4 @@ for (form.factor in form.factors){
         file = svg_file, append = FALSE)
   }
 }
-warning('"*September 2015 Most Probable" text is not included in translation')
+warning('"*Most Probable" text is not included in translation')
